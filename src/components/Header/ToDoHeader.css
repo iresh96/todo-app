@@ -1,0 +1,33 @@
+.header-container {
+  margin-top: 35px;
+  padding: 5px;
+  border: 1px solid #2f2f30;
+  border-radius: 15px;
+}
+
+.control {
+  padding: 0 10px;
+}
+
+.formControl {
+  min-width: 75px;
+}
+.blue {
+  background-color: #0984e3 !important;
+}
+
+.purple {
+  background-color: #6c5ce7 !important;
+}
+
+.pink {
+  background-color: #fd79a8 !important;
+}
+
+.orange {
+  background-color: #fdcb6e !important;
+}
+
+.green {
+  background-color: #00b894 !important;
+}

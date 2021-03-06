@@ -1,10 +1,10 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   return (
-    <div className="App">
-      <h1> Hello</h1>
+    <div className="todo-app">
+      <ToDoList />
     </div>
   );
 }
