@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ToDoModal from "./ToDoModal";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
+import { Checkbox, Chip } from "@material-ui/core";
+
+import "./ToDo.css";
 
 const ToDo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -23,11 +26,21 @@ const ToDo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
   return todos.map((todo, index) => (
     <div
-      className={todo.isComplete ? "todo-row complete" : "todo-row"}
+      className={
+        todo.isComplete
+          ? `todo-row complete ${todo.color}`
+          : `todo-row ${todo.color}`
+      }
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text + " " + todo.color + " " + todo.priority}
+      <Checkbox
+        checked={todo.isComplete}
+        onClick={() => completeTodo(todo.id)}
+        color="default"
+      />
+      <Chip ize="small" label={todo.priority} />
+      <div key={todo.id} className="text">
+        {todo.text}{" "}
       </div>
       <div className="icons">
         <RiCloseCircleLine

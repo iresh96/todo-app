@@ -43,6 +43,7 @@ function ToDoAdd({ onSubmit }) {
       color: color,
       priority: priority,
       date: Date.now(),
+      isComplete: false,
     });
     setInput("");
     setOpen(false);
@@ -85,11 +86,12 @@ function ToDoAdd({ onSubmit }) {
             >
               <Grid item xs={6} className="control">
                 <PriorityPicker
+                  required
                   pickPriority={(priority) => setPriority(priority)}
                 />
               </Grid>
               <Grid item xs={6} className="control">
-                <ColorPicker pickColor={(color) => setColor(color)} />
+                <ColorPicker required pickColor={(color) => setColor(color)} />
               </Grid>
             </Grid>
 
