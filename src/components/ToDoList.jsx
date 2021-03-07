@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ToDoForm from "./ToDoForm";
+import ToDoModal from "./ToDoModal";
 import ToDo from "./ToDo";
 import ToDoHeader from "./Header/ToDoHeader";
+import ToDoTab from "./ToDoTab";
 
 function ToDoList() {
   const [todos, setTodos] = useState([]);
@@ -45,8 +46,9 @@ function ToDoList() {
 
   return (
     <>
-      <ToDoHeader />
-      <ToDoForm onSubmit={addTodo} />
+      <ToDoHeader onSubmit={addTodo} />
+      <ToDoTab />
+      <ToDoModal onSubmit={addTodo} />
       <ToDo
         todos={todos}
         completeTodo={completeTodo}

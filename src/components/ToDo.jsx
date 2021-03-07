@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDoForm from "./ToDoForm";
+import ToDoModal from "./ToDoModal";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
@@ -18,7 +18,7 @@ const ToDo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   };
 
   if (edit.id) {
-    return <ToDoForm edit={edit} onSubmit={submitUpdate} />;
+    return <ToDoModal edit={edit} onSubmit={submitUpdate} />;
   }
 
   return todos.map((todo, index) => (

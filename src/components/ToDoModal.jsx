@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import uniqid from "uniqid";
 
-function ToDoForm(props) {
-  const [input, setInput] = useState(props.edit ? props.edit.value : "");
+function ToDoModal({ edit, onSubmit }) {
+  const [input, setInput] = useState(edit ? edit.value : "");
 
   const inputRef = useRef(null);
 
@@ -17,7 +18,7 @@ function ToDoForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    props.onSubmit({
+    onSubmit({
       id: uniqid(),
       text: input,
     });
@@ -26,7 +27,7 @@ function ToDoForm(props) {
 
   return (
     <form onSubmit={handleSubmit} className="todo-form">
-      {props.edit ? (
+      {edit ? (
         <>
           <input
             placeholder="Update your item"
@@ -59,4 +60,4 @@ function ToDoForm(props) {
   );
 }
 
-export default ToDoForm;
+export default ToDoModal;
