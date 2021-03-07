@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { Container, Grid, TextField, Typography } from "@material-ui/core";
-// import { RiCloseCircleLine } from "react-icons/ri";
+import { Container, Grid, TextField } from "@material-ui/core";
 
 import ToDoAdd from "./ToDoAdd";
 
 import "./ToDoHeader.css";
 
-import ColorPicker from "../ColorPicker";
-import PriorityPicker from "../PriorityPicker";
+import ColorPicker from "../Pickers/ColorPicker";
 
 function ToDoHeader({ onSubmit, getSearchValue, getColorValue, clearFilters }) {
   const [search, setSearch] = useState("");
@@ -42,16 +40,13 @@ function ToDoHeader({ onSubmit, getSearchValue, getColorValue, clearFilters }) {
         <Grid item xs={4}>
           <ToDoAdd onSubmit={onSubmit} />
         </Grid>
-        <Grid item xs={4}>
-          <Typography variant="subtitle1">Filter By:</Typography>
-        </Grid>
-        <Grid item xs={4}>
-          <PriorityPicker pickPriority={(priority) => setPriority(priority)} />
+        <Grid item xs={4} className="filter-text">
+          Filter By
         </Grid>
         <Grid item xs={4}>
           <ColorPicker pickColor={(color) => setColor(color)} none={true} />
         </Grid>
-        {/* <RiCloseCircleLine onClick={handleFilter} /> */}
+        <Grid item xs={4}></Grid>
       </Grid>
     </Container>
   );

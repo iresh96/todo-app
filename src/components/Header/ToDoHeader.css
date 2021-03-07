@@ -12,6 +12,14 @@
 .formControl {
   min-width: 75px;
 }
+
+.group-picker.formControl {
+  min-width: 110px;
+}
+
+.filter-text {
+  padding-top: 18px !important;
+}
 .blue {
   background-color: #0984e3 !important;
 }

@@ -10,14 +10,12 @@ import {
   Grid,
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-// import ColorPicker from "../ColorPicker";
-// import PriorityPicker from "../PriorityPicker";
 
 import "./ToDoAdd.css";
-import PriorityPicker from "../PriorityPicker";
-import ColorPicker from "../ColorPicker";
+import PriorityPicker from "../Pickers/PriorityPicker";
+import ColorPicker from "../Pickers/ColorPicker";
 
-function ToDoAdd({ onSubmit }) {
+function ToDoAdd({ edit, onSubmit }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState("pink");
   const [priority, setPriority] = useState("Low");

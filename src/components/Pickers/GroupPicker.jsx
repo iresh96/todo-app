@@ -15,13 +15,13 @@ function GroupPicker({ pickGroup }) {
 
   return (
     <FormControl variant="filled">
-      <InputLabel id="priority-select-label">Group By</InputLabel>
+      <InputLabel id="group-select-label">Group By</InputLabel>
       <Select
-        labelId="priority-select-label"
-        id="priority-select"
+        labelId="group-select-label"
+        id="group-select"
         value={group}
         onChange={handleGroupChange}
-        className="formControl"
+        className="group-picker formControl"
       >
         <MenuItem value="Color">Color</MenuItem>
         <MenuItem value="Priority">Priority</MenuItem>

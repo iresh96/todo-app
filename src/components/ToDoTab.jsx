@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Tabs, Tab, Paper, Grid } from "@material-ui/core";
 
 import ToDo from "./ToDo";
-import GroupPicker from "./GroupPicker";
+import GroupPicker from "./Pickers/GroupPicker";
 
 import "./ToDoTab.css";
 
@@ -20,8 +20,6 @@ function ToDoTab({
   const [newTodoList, setNewTodoList] = useState([]);
   const [group, setGroup] = useState("");
 
-  console.log(searchValue);
-  console.log(colorValue);
   useEffect(() => {
     if (!searchValue && !colorValue) {
       if (value === 1) {
@@ -29,7 +27,6 @@ function ToDoTab({
       } else if (value === 0) {
         setNewTodoList(todos.filter((todo) => !todo.isComplete));
       }
-      console.log("inside tab ");
     } else if (colorValue) {
       setNewTodoList(todos.filter((todo) => todo.color === colorValue));
       console.log("hit color");

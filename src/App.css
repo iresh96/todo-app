@@ -1,5 +1,5 @@
 .body {
-  background-color: #f2f2f2;
+  background-color: #f7f2e4;
 }
 .todo-app {
   display: flex;
@@ -9,7 +9,6 @@
   min-height: 600px;
   text-align: center;
   margin: 75px auto;
-  /* border: 1px solid #2f2f30; */
   border-radius: 10px;
   padding-bottom: 32px;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
