@@ -6,6 +6,8 @@ import ToDoTab from "./ToDoTab";
 
 function ToDoList() {
   const [todos, setTodos] = useState([]);
+  const [searchValue, setSearchValue] = useState([]);
+  const [colorValue, setColorValue] = useState();
 
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -45,14 +47,25 @@ function ToDoList() {
     console.log(todos);
   };
 
+  // const clearFilters = () => {
+  //   setColorValue("");
+  // };
+
   return (
     <>
-      <ToDoHeader onSubmit={addTodo} />
+      <ToDoHeader
+        onSubmit={addTodo}
+        getSearchValue={(value) => setSearchValue(value)}
+        getColorValue={(color) => setColorValue(color)}
+        // clearFilters={() => clearFilters()}
+      />
       <ToDoTab
         todos={todos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo}
+        searchValue={searchValue}
+        colorValue={colorValue}
       />
     </>
   );

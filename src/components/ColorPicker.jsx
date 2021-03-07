@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
-function ColorPicker({ required, pickColor }) {
+function ColorPicker({ required, pickColor, none }) {
   const [color, setColor] = useState("");
-
-  const colorPlate = ["blue", "purple", "pink", "orange", "green"];
 
   useEffect(() => {
     pickColor(color);
@@ -13,7 +11,6 @@ function ColorPicker({ required, pickColor }) {
 
   const handleColorChange = (e) => {
     setColor(e.target.value);
-    // return color;
   };
   return (
     <FormControl className="formControl">
@@ -26,11 +23,22 @@ function ColorPicker({ required, pickColor }) {
         onChange={handleColorChange}
         className="formControl"
       >
-        {colorPlate.map((color, index) => (
-          <MenuItem value={color} className={color} key={index}>
-            {color}
-          </MenuItem>
-        ))}
+        <MenuItem value="blue" className="blue">
+          Blue
+        </MenuItem>
+        <MenuItem value="purple" className="purple">
+          Purple
+        </MenuItem>
+        <MenuItem value="pink" className="pink">
+          Pink
+        </MenuItem>
+        <MenuItem value="orange" className="orange">
+          Orange
+        </MenuItem>
+        <MenuItem value="green" className="green">
+          Green
+        </MenuItem>
+        {none && <MenuItem value="">None</MenuItem>}
       </Select>
     </FormControl>
   );
