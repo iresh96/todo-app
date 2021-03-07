@@ -9,8 +9,12 @@ import "./ToDoHeader.css";
 import ColorPicker from "../ColorPicker";
 import PriorityPicker from "../PriorityPicker";
 
-function ToDoHeader() {
+function ToDoHeader({ onSubmit }) {
   const [search, setSearch] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  const [color, setColor] = useState("pink");
+  // eslint-disable-next-line no-unused-vars
+  const [priority, setPriority] = useState("Low");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -31,17 +35,17 @@ function ToDoHeader() {
           />
         </Grid>
         <Grid item xs={4}>
-          <ToDoAdd />
+          <ToDoAdd onSubmit={onSubmit} />
         </Grid>
 
         <Grid item xs={4}>
           <Typography variant="subtitle1">Group By:</Typography>
         </Grid>
         <Grid item xs={4}>
-          <PriorityPicker />
+          <PriorityPicker pickPriority={(priority) => setPriority(priority)} />
         </Grid>
         <Grid item xs={4}>
-          <ColorPicker />
+          <ColorPicker pickColor={(color) => setColor(color)} />
         </Grid>
       </Grid>
     </Container>

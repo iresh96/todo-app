@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
-function ColorPicker({ required }) {
+function ColorPicker({ required, pickColor }) {
   const [color, setColor] = useState("");
 
   const colorPlate = ["blue", "purple", "pink", "orange", "green"];
 
+  useEffect(() => {
+    pickColor(color);
+  }, [pickColor, color]);
+
   const handleColorChange = (e) => {
     setColor(e.target.value);
+    // return color;
   };
   return (
     <FormControl className="formControl">

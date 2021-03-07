@@ -4,22 +4,23 @@ import uniqid from "uniqid";
 import {
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   TextField,
-  Input,
   Grid,
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import ColorPicker from "../ColorPicker";
-import PriorityPicker from "../PriorityPicker";
+// import ColorPicker from "../ColorPicker";
+// import PriorityPicker from "../PriorityPicker";
 
 import "./ToDoAdd.css";
+import PriorityPicker from "../PriorityPicker";
+import ColorPicker from "../ColorPicker";
 
 function ToDoAdd({ onSubmit }) {
   const [open, setOpen] = useState(false);
-
+  const [color, setColor] = useState("pink");
+  const [priority, setPriority] = useState("Low");
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
@@ -35,14 +36,16 @@ function ToDoAdd({ onSubmit }) {
   };
 
   const handleAddTodo = (e) => {
-    setOpen(false);
     e.preventDefault();
-
     onSubmit({
       id: uniqid(),
       text: input,
+      color: color,
+      priority: priority,
+      date: Date.now(),
     });
     setInput("");
+    setOpen(false);
   };
   return (
     <div>
@@ -81,10 +84,12 @@ function ToDoAdd({ onSubmit }) {
               className="dialog-pickers"
             >
               <Grid item xs={6} className="control">
-                <PriorityPicker required="true" />
+                <PriorityPicker
+                  pickPriority={(priority) => setPriority(priority)}
+                />
               </Grid>
               <Grid item xs={6} className="control">
-                <ColorPicker required="true" />
+                <ColorPicker pickColor={(color) => setColor(color)} />
               </Grid>
             </Grid>
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDoModal from "./ToDoModal";
+// import ToDoModal from "./ToDoModal";
 import ToDo from "./ToDo";
 import ToDoHeader from "./Header/ToDoHeader";
 import ToDoTab from "./ToDoTab";
@@ -15,7 +15,7 @@ function ToDoList() {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(...todos);
+    console.log(newTodos);
   };
 
   const updateTodo = (todoId, newValue) => {
@@ -48,7 +48,6 @@ function ToDoList() {
     <>
       <ToDoHeader onSubmit={addTodo} />
       <ToDoTab />
-      <ToDoModal onSubmit={addTodo} />
       <ToDo
         todos={todos}
         completeTodo={completeTodo}
