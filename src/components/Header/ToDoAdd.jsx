@@ -11,10 +11,12 @@ import {
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 
-import "./ToDoAdd.css";
 import PriorityPicker from "../Pickers/PriorityPicker";
 import ColorPicker from "../Pickers/ColorPicker";
 
+import "./ToDoAdd.css";
+
+//Todo adding Modala
 function ToDoAdd({ onSubmit }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState("pink");
@@ -33,6 +35,7 @@ function ToDoAdd({ onSubmit }) {
     setOpen(false);
   };
 
+  //Creating new Todo
   const handleAddTodo = (e) => {
     e.preventDefault();
     onSubmit({

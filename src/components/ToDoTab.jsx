@@ -21,15 +21,17 @@ function ToDoTab({
 
   useEffect(() => {
     if (!searchValue && !colorValue) {
+      //Comleted /Not completed tabbing
       if (value === 1) {
         setNewTodoList(todos.filter((todo) => todo.isComplete));
       } else if (value === 0) {
         setNewTodoList(todos.filter((todo) => !todo.isComplete));
       }
     } else if (colorValue) {
+      //Filter By color
       setNewTodoList(todos.filter((todo) => todo.color === colorValue));
-      console.log("hit color");
     } else {
+      //Search Filter
       setNewTodoList(
         todos.filter((todo) => {
           return todo.text.toLowerCase().includes(searchValue.toLowerCase());

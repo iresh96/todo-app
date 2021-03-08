@@ -25,7 +25,7 @@ function GroupPicker({ pickGroup }) {
       >
         <MenuItem value="Color">Color</MenuItem>
         <MenuItem value="Priority">Priority</MenuItem>
-        <MenuItem value="Month">Month</MenuItem>
+        <MenuItem value="">Clear</MenuItem>
       </Select>
     </FormControl>
   );

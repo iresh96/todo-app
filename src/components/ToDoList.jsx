@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import HeaderText from "./Header/HeaderText";
+
 import ToDoHeader from "./Header/ToDoHeader";
 import ToDoTab from "./ToDoTab";
 
@@ -7,6 +9,7 @@ function ToDoList() {
   const [searchValue, setSearchValue] = useState([]);
   const [colorValue, setColorValue] = useState();
 
+  //Adding New Todo to list
   const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
@@ -15,15 +18,16 @@ function ToDoList() {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(newTodos);
   };
 
+  //Removing a todo
   const removeTodo = (id) => {
     const removedArr = [...todos].filter((todo) => todo.id !== id);
 
     setTodos(removedArr);
   };
 
+  //Marking ascompleted
   const completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
@@ -37,6 +41,7 @@ function ToDoList() {
 
   return (
     <>
+      <HeaderText />
       <ToDoHeader
         onSubmit={addTodo}
         getSearchValue={(value) => setSearchValue(value)}

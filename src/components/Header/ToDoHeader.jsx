@@ -17,6 +17,7 @@ function ToDoHeader({ onSubmit, getSearchValue, getColorValue }) {
     getColorValue(color);
   }, [getSearchValue, search, color, getColorValue]);
 
+  //Getting search value
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
