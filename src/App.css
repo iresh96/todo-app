@@ -1,15 +1,13 @@
-.body {
-  background-color: #f7f2e4;
-}
 .todo-app {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 520px;
+  max-width: 520px;
   min-height: 600px;
   text-align: center;
   margin: 75px auto;
   border-radius: 10px;
   padding-bottom: 32px;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  background-color: #faf9f5;
 }

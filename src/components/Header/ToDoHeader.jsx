@@ -8,11 +8,9 @@ import "./ToDoHeader.css";
 
 import ColorPicker from "../Pickers/ColorPicker";
 
-function ToDoHeader({ onSubmit, getSearchValue, getColorValue, clearFilters }) {
+function ToDoHeader({ onSubmit, getSearchValue, getColorValue }) {
   const [search, setSearch] = useState("");
   const [color, setColor] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const [priority, setPriority] = useState("Low");
 
   useEffect(() => {
     getSearchValue(search);
@@ -37,6 +35,7 @@ function ToDoHeader({ onSubmit, getSearchValue, getColorValue, clearFilters }) {
             variant="outlined"
           />
         </Grid>
+
         <Grid item xs={4}>
           <ToDoAdd onSubmit={onSubmit} />
         </Grid>

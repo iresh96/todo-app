@@ -15,7 +15,7 @@ import "./ToDoAdd.css";
 import PriorityPicker from "../Pickers/PriorityPicker";
 import ColorPicker from "../Pickers/ColorPicker";
 
-function ToDoAdd({ edit, onSubmit }) {
+function ToDoAdd({ onSubmit }) {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState("pink");
   const [priority, setPriority] = useState("Low");

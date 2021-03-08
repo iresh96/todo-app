@@ -11,7 +11,6 @@ function ToDoTab({
   todos,
   completeTodo,
   removeTodo,
-  updateTodo,
   tabValue,
   searchValue,
   colorValue,
@@ -68,7 +67,6 @@ function ToDoTab({
         todos={newTodoList}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
-        updateTodo={updateTodo}
         tabValue={tabValue}
         group={group}
       />

@@ -1,25 +1,10 @@
-import React, { useState } from "react";
-import ToDoModal from "./ToDoModal";
+import React from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
-import { TiEdit } from "react-icons/ti";
-import { Checkbox, Chip, Container } from "@material-ui/core";
+import { Checkbox, Chip } from "@material-ui/core";
 
 import "./ToDo.css";
 
-const ToDo = ({ todos, completeTodo, removeTodo, updateTodo, group }) => {
-  const [edit, setEdit] = useState({
-    id: null,
-    value: "",
-  });
-
-  const submitUpdate = (value) => {
-    updateTodo(edit.id, value);
-    setEdit({
-      id: null,
-      value: "",
-    });
-  };
-
+const ToDo = ({ todos, completeTodo, removeTodo, group }) => {
   const compareColor = (a, b) => {
     if (a.color < b.color) {
       return -1;
@@ -54,18 +39,10 @@ const ToDo = ({ todos, completeTodo, removeTodo, updateTodo, group }) => {
             onClick={() => removeTodo(todo.id)}
             className="delete-icon"
           />
-          <TiEdit
-            onClick={() => setEdit({ id: todo.id, value: todo.text })}
-            className="edit-icon"
-          />
         </div>
       </div>
     ));
   };
-
-  if (edit.id) {
-    return <ToDoModal edit={edit} onSubmit={submitUpdate} />;
-  }
 
   if (group === "Color") {
     const sortedlist = todos.sort(compareColor);
