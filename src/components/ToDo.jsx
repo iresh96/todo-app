@@ -32,36 +32,34 @@ const ToDo = ({ todos, completeTodo, removeTodo, updateTodo, group }) => {
 
   const uigenerator = (array) => {
     return array.map((todo, index) => (
-      <Container>
-        <div
-          className={
-            todo.isComplete
-              ? `todo-row complete ${todo.color}`
-              : `todo-row ${todo.color}`
-          }
-          key={index}
-        >
-          <Checkbox
-            checked={todo.isComplete}
-            onClick={() => completeTodo(todo.id)}
-            color="default"
-          />
-          <Chip ize="small" label={todo.priority} />
-          <div key={todo.id} className="text">
-            {todo.text}{" "}
-          </div>
-          <div className="icons">
-            <RiCloseCircleLine
-              onClick={() => removeTodo(todo.id)}
-              className="delete-icon"
-            />
-            <TiEdit
-              onClick={() => setEdit({ id: todo.id, value: todo.text })}
-              className="edit-icon"
-            />
-          </div>
+      <div
+        className={
+          todo.isComplete
+            ? `todo-row complete ${todo.color}`
+            : `todo-row ${todo.color}`
+        }
+        key={index}
+      >
+        <Checkbox
+          checked={todo.isComplete}
+          onClick={() => completeTodo(todo.id)}
+          color="default"
+        />
+        <Chip ize="small" label={todo.priority} />
+        <div key={todo.id} className="text">
+          {todo.text}{" "}
         </div>
-      </Container>
+        <div className="icons">
+          <RiCloseCircleLine
+            onClick={() => removeTodo(todo.id)}
+            className="delete-icon"
+          />
+          <TiEdit
+            onClick={() => setEdit({ id: todo.id, value: todo.text })}
+            className="edit-icon"
+          />
+        </div>
+      </div>
     ));
   };
 

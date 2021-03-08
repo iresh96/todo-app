@@ -23,6 +23,7 @@
   display: flex;
   margin-right: auto;
   margin-left: 10px;
+  overflow-wrap: anywhere;
 }
 .delete-icon {
   margin-right: 5px;
