@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import HeaderText from "./Header/HeaderText";
-import ToDoAdd from "./Header/ToDoAdd";
+import React, { useState } from 'react';
 
-import ToDoHeader from "./Header/ToDoHeader";
-import ToDoTab from "./ToDoTab";
+import HeaderText from './Header/HeaderText';
+import ToDoHeader from './Header/ToDoHeader';
+import ToDoTab from './ToDoTab';
 
 function ToDoList() {
   const [todos, setTodos] = useState([]);
@@ -42,11 +41,8 @@ function ToDoList() {
 
   return (
     <>
-      <div className="header-top">
-        <HeaderText />
-        <ToDoAdd onSubmit={addTodo} />
-      </div>
       <div className="todo-app">
+        <HeaderText />
         <ToDoHeader
           onSubmit={addTodo}
           getSearchValue={(value) => setSearchValue(value)}

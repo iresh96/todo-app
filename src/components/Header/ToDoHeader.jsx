@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import './ToDoHeader.css';
 
-import { Container, Grid, TextField } from "@material-ui/core";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
-import ToDoAdd from "./ToDoAdd";
+import {
+  Container,
+  Grid,
+  TextField,
+} from '@material-ui/core';
 
-import "./ToDoHeader.css";
-
-import ColorPicker from "../Pickers/ColorPicker";
+import ColorPicker from '../Pickers/ColorPicker';
+import ToDoAdd from './ToDoAdd';
 
 function ToDoHeader({ onSubmit, getSearchValue, getColorValue }) {
   const [search, setSearch] = useState("");
@@ -37,7 +43,9 @@ function ToDoHeader({ onSubmit, getSearchValue, getColorValue }) {
           />
         </Grid>
 
-        <Grid item xs={4}></Grid>
+        <Grid item xs={4}>
+          <ToDoAdd onSubmit={onSubmit} />
+        </Grid>
         <Grid item xs={4} className="filter-text">
           Filter By
         </Grid>
