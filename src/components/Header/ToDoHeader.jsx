@@ -37,9 +37,7 @@ function ToDoHeader({ onSubmit, getSearchValue, getColorValue }) {
           />
         </Grid>
 
-        <Grid item xs={4}>
-          <ToDoAdd onSubmit={onSubmit} />
-        </Grid>
+        <Grid item xs={4}></Grid>
         <Grid item xs={4} className="filter-text">
           Filter By
         </Grid>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HeaderText from "./Header/HeaderText";
+import ToDoAdd from "./Header/ToDoAdd";
 
 import ToDoHeader from "./Header/ToDoHeader";
 import ToDoTab from "./ToDoTab";
@@ -41,19 +42,24 @@ function ToDoList() {
 
   return (
     <>
-      <HeaderText />
-      <ToDoHeader
-        onSubmit={addTodo}
-        getSearchValue={(value) => setSearchValue(value)}
-        getColorValue={(color) => setColorValue(color)}
-      />
-      <ToDoTab
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        searchValue={searchValue}
-        colorValue={colorValue}
-      />
+      <div className="header-top">
+        <HeaderText />
+        <ToDoAdd onSubmit={addTodo} />
+      </div>
+      <div className="todo-app">
+        <ToDoHeader
+          onSubmit={addTodo}
+          getSearchValue={(value) => setSearchValue(value)}
+          getColorValue={(color) => setColorValue(color)}
+        />
+        <ToDoTab
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          searchValue={searchValue}
+          colorValue={colorValue}
+        />
+      </div>
     </>
   );
 }

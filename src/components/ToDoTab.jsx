@@ -15,7 +15,7 @@ function ToDoTab({
   searchValue,
   colorValue,
 }) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0); //tab value
   const [newTodoList, setNewTodoList] = useState([]);
   const [group, setGroup] = useState("");
 
