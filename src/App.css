@@ -5,18 +5,10 @@
   max-width: 520px;
   min-height: 600px;
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 75px auto;
   border-radius: 10px;
   padding-bottom: 32px;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
   background-color: #faf9f5;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
 }

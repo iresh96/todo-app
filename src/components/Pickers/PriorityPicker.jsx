@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
-function PriorityPicker({ required, pickPriority }) {
+function PriorityPicker({ required, pickPriority, preValue }) {
   const [priority, setPriority] = useState("");
 
   useEffect(() => {

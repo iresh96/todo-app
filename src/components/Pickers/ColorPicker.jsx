@@ -18,7 +18,6 @@ function ColorPicker({ required, pickColor, none }) {
       <Select
         labelId="color-select-label"
         id="color-select"
-        value={color}
         required={required}
         onChange={handleColorChange}
         className="formControl"

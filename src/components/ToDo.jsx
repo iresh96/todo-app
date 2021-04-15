@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { Checkbox, Chip } from "@material-ui/core";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import ToDoModal from "../components/Header/ToDoModal";
 
 import "./ToDo.css";
 
-const ToDo = ({ todos, completeTodo, removeTodo, group }) => {
+const ToDo = ({ todos, completeTodo, onUpdate, removeTodo, group }) => {
   const [newtodos, setNewtodos] = useState([]);
 
   useEffect(() => {
@@ -52,7 +53,13 @@ const ToDo = ({ todos, completeTodo, removeTodo, group }) => {
                       <div key={todo.id} className="text">
                         {todo.text}{" "}
                       </div>
+
                       <div className="icons">
+                        <ToDoModal
+                          editIcon={true}
+                          todo={todo}
+                          onUpdate={onUpdate}
+                        />
                         <RiCloseCircleLine
                           onClick={() => removeTodo(todo.id)}
                           className="delete-icon"

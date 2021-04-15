@@ -10,12 +10,13 @@ import "./ToDoTab.css";
 function ToDoTab({
   todos,
   completeTodo,
+  onUpdate,
   removeTodo,
   tabValue,
   searchValue,
   colorValue,
 }) {
-  const [value, setValue] = useState(0); //tab value
+  const [value, setValue] = useState(0);
   const [newTodoList, setNewTodoList] = useState([]);
   const [group, setGroup] = useState("");
 
@@ -68,6 +69,7 @@ function ToDoTab({
       <ToDo
         todos={newTodoList}
         completeTodo={completeTodo}
+        onUpdate={onUpdate}
         removeTodo={removeTodo}
         tabValue={tabValue}
         group={group}

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import HeaderText from "./Header/HeaderText";
 
-import HeaderText from './Header/HeaderText';
-import ToDoHeader from './Header/ToDoHeader';
-import ToDoTab from './ToDoTab';
+import ToDoHeader from "./Header/ToDoHeader";
+import ToDoTab from "./ToDoTab";
 
 function ToDoList() {
   const [todos, setTodos] = useState([]);
@@ -20,6 +20,16 @@ function ToDoList() {
     setTodos(newTodos);
   };
 
+  const updateTodo = (todoId, newValue) => {
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+
+    setTodos((prev) =>
+      prev.map((item) => (item.id === todoId ? newValue : item))
+    );
+  };
+
   //Removing a todo
   const removeTodo = (id) => {
     const removedArr = [...todos].filter((todo) => todo.id !== id);
@@ -27,7 +37,7 @@ function ToDoList() {
     setTodos(removedArr);
   };
 
-  //Marking ascompleted
+  //Marking as completed
   const completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
@@ -41,21 +51,20 @@ function ToDoList() {
 
   return (
     <>
-      <div className="todo-app">
-        <HeaderText />
-        <ToDoHeader
-          onSubmit={addTodo}
-          getSearchValue={(value) => setSearchValue(value)}
-          getColorValue={(color) => setColorValue(color)}
-        />
-        <ToDoTab
-          todos={todos}
-          completeTodo={completeTodo}
-          removeTodo={removeTodo}
-          searchValue={searchValue}
-          colorValue={colorValue}
-        />
-      </div>
+      <HeaderText />
+      <ToDoHeader
+        onSubmit={addTodo}
+        getSearchValue={(value) => setSearchValue(value)}
+        getColorValue={(color) => setColorValue(color)}
+      />
+      <ToDoTab
+        todos={todos}
+        completeTodo={completeTodo}
+        removeTodo={removeTodo}
+        onUpdate={updateTodo}
+        searchValue={searchValue}
+        colorValue={colorValue}
+      />
     </>
   );
 }
